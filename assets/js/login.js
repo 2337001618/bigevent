@@ -55,7 +55,7 @@ $(function () {
         // console.log(data);
         $.ajax({
             type: "POST",
-            url: 'http://ajax.frontend.itheima.net/api/reguser',
+            url: '/api/reguser',
             data,
             success: function (res) {
                 console.log(res);//lyy1204  123456  t12345 123456 t12345678 12345678
@@ -81,7 +81,7 @@ $(function () {
         // console.log(data);
         $.ajax({
             type: "POST",
-            url: 'http://ajax.frontend.itheima.net/api/login',
+            url: '/api/login',
             data,
             success: function (res) {
                 console.log(res);//lyy1204  123456  t12345 123456 t12345678 12345678
@@ -94,6 +94,9 @@ $(function () {
 
                 // 跳转到首页
                 // location.href = "/home/index.html"
+
+                // 把token存储在本地中
+                localStorage.setItem('token', res.token);
 
                 layer.msg('登录成功,即将跳转到首页', {
                     time: 2000 //2秒关闭（如果不配置，默认是3秒）
